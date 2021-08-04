@@ -16,6 +16,7 @@ jobs:
       - name: Pull new documentation
         run: |
           git clone https://github.com/creamcropdev/creamcrop
+          mkdir ${{ github.event.inputs.release }}
           mv ./creamcrop/docs/** ${{ github.event.inputs.release }}/
           rm -rf latest/
           cp -r ${{ github.event.inputs.release }}/** ./latest/

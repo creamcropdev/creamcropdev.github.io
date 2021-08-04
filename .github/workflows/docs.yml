@@ -19,6 +19,7 @@ jobs:
           mkdir ${{ github.event.inputs.release }}
           mv ./creamcrop/docs/** ${{ github.event.inputs.release }}/
           rm -rf latest/
+          mkdir latest
           cp -r ${{ github.event.inputs.release }}/** ./latest/
           rm -rf creamcrop/
       - name: Commit changes

@@ -1,23 +1,26 @@
 name: Update documentation
 
 on:
-  repository_dispatch:
-    types: [opened]
+  workflow_dispatch:
+    inputs:
+      release: 
+        description: 'Release to fetch'
+        required: true
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
-  steps:
-    - uses: actions/checkout@v2
-    - name: Pull new documentation
-      run: |
-        git clone https://github.com/creamcropdev/creamcrop
-        mv ./creamcrop/docs/** ${{ github.event.client_payload.release }}/
-        rm -rf latest/
-        cp -r ${{ github.event.client_payload.release }}/** ./latest/
-        rm -rf creamcrop/
-    - name: Commit changes
-      run: |
-        git add .
-        git commit -m "Update documentation for Latest Release"
+    steps:
+      - uses: actions/checkout@v2
+      - name: Pull new documentation
+        run: |
+          git clone https://github.com/creamcropdev/creamcrop
+          mv ./creamcrop/docs/** ${{ github.event.inputs.release }}/
+          rm -rf latest/
+          cp -r ${{ github.event.inputs.release }}/** ./latest/
+          rm -rf creamcrop/
+      - name: Commit changes
+        run: |
+          git add .
+          git commit -m "Update documentation for Latest Release"

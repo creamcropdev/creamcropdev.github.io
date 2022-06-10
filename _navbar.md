@@ -1,7 +1,8 @@
 * [npm](https://npmjs.org/package/creamcrop)
 * [Github](https://github.com/creamcropdev/creamcrop)
 * Docs
-   * [`/latest` (Version 0.10.0)](/latest/ ':ignore :target=_self')
+   * [`/latest` (Version 0.11.0)](/latest/ ':ignore :target=_self')
+   * [`/v0.11.0`](/v0.11.0/ ':ignore :target=_self')
    * [`/v0.10.0`](/v0.10.0/ ':ignore :target=_self')
    * [`/v0.9.0`](/v0.9.0/ ':ignore :target=_self')
    * [`/v0.8.0`](/v0.8.0/ ':ignore :target=_self')
